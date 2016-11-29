@@ -2,10 +2,11 @@
 1) Fonts
 2) Setup
 3) Base Styles
-4) Form Styles
-5) User Messages
-6) Bot Messages
-7) Misc
+4) Header
+5) Form Styles
+6) User Messages
+7) Bot Messages
+8) Misc
 
 **** End of Table of Contents**** */
 /*  **** Fonts **** */
@@ -27,16 +28,21 @@
 /* ****Base Styles**** */
 body { font-family: 'proxima_nova_rgregular', Helvetica, Arial, sans-serif; font-size: 15px; }
 
+/* ****Header**** */
+#header { height: 45px; border-bottom: 2px solid #e6e6ea; padding: 10px; }
+#header .heading h1 { text-align: center; margin: 0; padding: 0; font-size: 18px; color: #12090e; }
+#header .icons .call, #header .icons .video, #header .icons .faq { text-align: right; }
+
 /* ****Form Styles**** */
 form { background: white; position: fixed; bottom: 0; padding-bottom: 10px; }
 form input { border: 2px solid #e6e6ea; padding: 10px; font-size: 13px; }
-form button { font-size: 18px; font-family: 'proxima_novasemibold', Helvetica, Arial, sans-serif; background: #e6e6ea; border: none; padding: 10px; height: 40px; }
+form button { font-size: 18px; font-family: 'proxima_novasemibold', Helvetica, Arial, sans-serif; background: #e6e6ea; color: #12090e; border: none; padding: 10px; height: 40px; }
 
 /* ****Messages**** */
 #messages { list-style-type: none; margin: 10px 0 40px 0; padding: 10px; }
-#messages li { padding: 5px 10px; text-align: right; display: block; -webkit-border-radius: 50px; -moz-border-radius: 50px; border-radius: 50px; }
-#messages li .userMessage { background-color: #69bf2a; color: #f4f5f8; margin-top: 3px; margin-bottom: 3px; }
-#messages li .botMessage { text-align: left !important; background-color: #e6e6ea; }
+#messages li { padding: 5px 15px 5px 25px; text-align: right; display: block; -webkit-border-radius: 30px; -moz-border-radius: 30px; border-radius: 30px; margin-bottom: 10px; }
+#messages .userMessage { background-color: #69bf2a; color: #f4f5f8; }
+#messages .botMessage { text-align: left !important; background-color: #e6e6ea; color: #12090e; }
 
 /* ****Misc**** */
 /*#messages li:nth-child(odd) { background: #eee; }*/
