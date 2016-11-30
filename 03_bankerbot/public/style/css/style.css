@@ -1,4 +1,4 @@
-/* ****Table of Contents**** 
+/* ****Table of Contents****
 1) Fonts
 2) Setup
 3) Base Styles
@@ -29,14 +29,14 @@
 body { font-family: 'proxima_nova_rgregular', Helvetica, Arial, sans-serif; font-size: 15px; }
 
 /* ****Header**** */
-#header { height: 45px; border-bottom: 2px solid #e6e6ea; padding: 10px; }
+#header { height: 45px; border-bottom: 2px solid #e6e6ea; }
 #header .heading h1 { text-align: center; margin: 0; padding: 0; font-size: 18px; color: #12090e; }
 #header .icons .call, #header .icons .video, #header .icons .faq { text-align: right; }
 
 /* ****Form Styles**** */
 form { background: white; position: fixed; bottom: 0; padding-bottom: 10px; }
 form input { border: 2px solid #e6e6ea; padding: 10px; font-size: 13px; }
-form button { font-size: 18px; font-family: 'proxima_nova_rgregular', Helvetica, Arial, sans-serif; background: #e6e6ea; color: #12090e; border: none; padding: 10px; height: 39px; }
+form button { outline: none; font-size: 18px; font-family: 'proxima_nova_rgregular', Helvetica, Arial, sans-serif; background: #e6e6ea; color: #12090e; border: none; padding: 10px; height: 39px; }
 
 /* ****Messages**** */
 #messages { list-style-type: none; margin: 10px 0 40px 0; padding: 10px; }
@@ -47,3 +47,56 @@ form button { font-size: 18px; font-family: 'proxima_nova_rgregular', Helvetica,
 /* ****Misc**** */
 /*#messages li:nth-child(odd) { background: #eee; }*/
 input:focus { outline: none !important; }
+
+
+
+
+
+/*** Spencer's Annoying Edits ***/
+#header div {
+  height: 100%;
+}
+
+#header div div {
+  height: 100%;
+}
+
+.icon {
+  background-size: 40px;
+  background-repeat: no-repeat;
+}
+
+.menuIcon {
+  background-image: url('../../img/user-icons/icon-menu.svg');
+  background-position-x: left;
+}
+
+.logoIcon {
+  background-image: url('../../img/user-icons/icon-penny.svg');
+  background-position-x: center;
+}
+
+.closeIcon {
+  background-image: url('../../img/user-icons/icon-close.svg');
+  background-position-x: right;
+}
+
+.callIcon {
+  background-image: url('../../img/user-icons/icon-call.svg');
+  background-position-x: left;
+}
+
+.videoIcon {
+  background-image: url('../../img/user-icons/icon-video.svg');
+  background-position-x: left;
+}
+
+.faqIcon {
+  background-image: url('../../img/user-icons/icon-FAQ.svg');
+  background-position-x: left;
+}
+
+.sendIcon {
+  background-image: url('../../img/user-icons/icon-send.svg');
+  background-position-x: right;
+}
