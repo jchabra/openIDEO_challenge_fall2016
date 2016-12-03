@@ -25,22 +25,39 @@
 <body>
   <div id="header">
     <div class="grid-container grid-100 mobile-grid-100">
-      <div class="grid-30 mobile-grid-30 icon menuIcon">
-        <div class="grid-33 icon callIcon"></div>
-        <div class="grid-33 icon videoIcon"></div>
-        <div class="grid-33 icon faqIcon"></div>
+      <!-- back -->
+      <div class="grid-5 suffix-25 mobile-grid-15 mobile-suffix-15 back">
+        <a href=""><img src="img/user-icons/back.png" alt="Back Button"></a>
       </div>
-      <div class="grid-40 mobile-grid-40 icon logoIcon"></div>
-      <div class="grid-30 mobile-grid-30 icon closeIcon"></div>
+      <!-- logo -->
+      <div class="grid-10 prefix-15 suffix-15 mobile-grid-20 mobile-prefix-10 mobile-suffix-5 logo">
+        <img src="img/user-icons/MoneyPenny.png" alt="Money Penny Logo">
+      </div>
+      <!-- other -->
+      <div class="grid-30 mobile-grid-35 icons">
+        <div class="grid-33 mobile-grid-33 call">
+          <img src="img/user-icons/phonecall.png" alt="Phone Call Icon">
+        </div>
+        <div class="grid-33 mobile-grid-33 video">
+          <img src="img/user-icons/videocall.png" alt="Video Call Icon">
+        </div>
+        <div class="grid-33 mobile-grid-33 faq">
+          <a href="" target ="_blank">
+            <img src="img/user-icons/QA-2.png" alt="Frequently Asked Questions Icon">
+          </a>
+        </div>
+      </div>
     </div><!-- //.grid-container -->
   </div><!-- //#header -->
+
+  <!-- Message Box -->
   <ul id="messages" class="grid-100 mobile-grid-100"></ul>
+
+  <!-- Type Message/Send -->
   <form action="" class="grid-100 mobile-grid-100">
-    <input id="m" class="grid-90 mobile-grid-90" autocomplete="off" />
-    <button class="grid-10 mobile-grid-10 icon sendIcon"></button>
+    <input id="m" class="grid-95 mobile-grid-90" autocomplete="off" />
+    <button class="grid-5 mobile-grid-10 icon submit">Submit</button>
   </form>
-
-
 
   <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
   <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
