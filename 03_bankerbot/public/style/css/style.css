@@ -113,6 +113,7 @@ form input {
   border: 2px solid #e6e6ea;
   padding: 10px;
   font-size: 13px;
+  font-family: 'proxima_nova_rgregular', Helvetica, Arial, sans-serif;
 }
 form button {
   border: none;
