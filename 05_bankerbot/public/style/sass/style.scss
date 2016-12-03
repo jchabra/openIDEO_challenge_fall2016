@@ -1,0 +1,294 @@
+//*** SASS Table of Contents //
+// 1) Fonts
+// 2) Colors
+// 3) Mixins
+// 4) Setup
+// 5) Base Styles
+// 6) Form Styles
+// 7) User Messages
+// 8) Bot Messages
+// 9) Misc
+
+/* ****Table of Contents**** 
+1) Fonts
+2) Setup
+3) Base Styles
+4) Header
+5) Form Styles
+6) User Messages
+7) Bot Messages
+8) Misc
+9) Media Queries
+
+**** End of Table of Contents**** */
+
+/*  **** Fonts **** */
+@import 'fonts';
+
+//  **** Colors **** //
+@import 'colors';
+
+// **** Mixins **** //
+@mixin image-replacement {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  color: transparent;
+}
+
+@mixin font-regular {
+  font-family: 'proxima_nova_rgregular', Helvetica, Arial, sans-serif;
+}
+
+@mixin font-light {
+  font-family: 'proxima_novalight', Helvetica, Arial, sans-serif;
+}
+
+@mixin font-semiBold {
+  font-family: 'proxima_novasemibold', Helvetica, Arial, sans-serif;
+}
+
+/* ****Setup**** */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* ****Base Styles**** */
+
+body {
+  @include font-regular;
+  font-size: 15px;
+}
+
+/* ****Header**** */
+#header {
+  height: 60px;
+  border-bottom: 2px solid $gray;
+  padding: 10px 2px;
+  .logo {
+    img {
+      width: 40%;
+      display: block;
+      margin: auto;
+    }
+  }//.logo
+  .back {
+    margin-top: 5px;
+    img {
+      width: 70%;
+      display: block;
+      margin: auto auto auto 0px;
+    }
+  }
+  .icons {
+    margin-top: 5px;
+    .call, .video, .faq {
+      img {
+        width: 30%;
+        display: block;
+        cursor: pointer;
+        cursor: hand;
+      }
+    }
+  }
+}
+
+/* ****Form Styles**** */
+
+form {
+  background: $white;
+  position: fixed;
+  bottom: 0;
+  padding-bottom: 10px; 
+  input {
+    border: 2px solid $gray;
+    padding: 10px;
+    font-size: 13px;
+    @include font-regular;
+  }
+  button {
+    border: none;
+    padding: 10px;
+    height: 39px;
+    @include image-replacement;
+    background: url(../../img/user-icons/send.png) no-repeat $gray;
+    background-size: 20px;
+    background-position: 24px 10px;
+  }
+}
+
+/* ****Messages**** */
+#messages { 
+  list-style-type: none; 
+  margin: 10px 0 40px 0; 
+  padding: 10px; 
+  li {
+    padding: 11px;
+    text-align: left;
+    display: inline-block;
+    -webkit-border-radius: 18px;
+    -moz-border-radius: 18px;
+    border-radius: 18px;
+    margin-bottom: 10px;
+    max-width: 70%;
+    clear: both;
+    &#botTypingMessage {
+      padding: 2px 15px 8px 15px;
+      @include font-semiBold;
+      font-size: 22px;
+      color: $dark-gray;
+      letter-spacing: 2px;
+    }
+  }
+}
+
+// ****User Messages****
+.userMessage {
+  background-color: $green;
+  color: $light-gray;
+  float: right;
+}
+// ****Bot Messages**** 
+.botMessage {
+  float: left;
+  background-color: $gray;
+  color: $smoke-black;
+}
+
+/* ****Misc**** */
+
+input:focus { 
+  outline:none !important; 
+}
+
+/* ****Media Queries**** */
+
+@media screen and (max-width: 900px) {
+  .logo {
+    img {
+      width: 60% !important;
+    }
+  }
+  .back {
+    margin-top: 10px;
+    img {
+      width: 95% !important;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .logo {
+    img {
+      width: 30% !important;
+    }
+  }
+  .back {
+    margin-top: 10px;
+    img {
+      width: 35% !important;
+    }
+  }
+  .icons {
+    .call, .video, .faq {
+      img {
+        width: 55% !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 666px) {
+  .logo {
+    img {
+      width: 35% !important;
+    }
+  }
+  .icons {
+    .call, .video, .faq {
+      img {
+        width: 65% !important;
+      }
+    }
+  }
+  form {
+    button {
+      background-position: 18px 10px;
+    }
+  }
+}
+
+
+@media screen and (max-width: 460px) {
+  .logo {
+    img {
+      width: 60% !important;
+    }
+  }
+  .back {
+    margin-top: 10px;
+    img {
+      width: 55% !important;
+    }
+  }
+  .icons {
+    margin-top: 8px !important;
+    .call, .video, .faq {
+      img {
+        width: 95% !important;
+      }
+    }
+  }
+  form {
+    button {
+      background-position: 12px 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .logo {
+    img {
+      width: 75% !important;
+    }
+  }
+  .back {
+    margin-top: 20px;
+    img {
+      width: 80% !important;
+    }
+  }
+  .icons {
+    padding-right: 2px !important;
+    margin-top: 5px !important;;
+    .call, .video, .faq {
+      padding-left: 5px !important;
+      padding-right: 5px !important;
+      img {
+        width: 95% !important;
+      }
+    }
+  }
+  form {
+    button {
+      background-position: 8px 11px;
+      background-size: 18px;
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .logo {
+    img {
+      width: 95% !important;
+    }
+  }
+  form {
+    button {
+      background-position: 5px 11px;
+    }
+  }
+}

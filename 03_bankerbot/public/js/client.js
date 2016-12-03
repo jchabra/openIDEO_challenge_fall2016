@@ -1,6 +1,7 @@
 var bot = false;
 var typing = false;
 var timeout = undefined;
+var msgsHeight = 0;
 
 var socket = io();
 $('form').submit(function(){
@@ -42,6 +43,16 @@ socket.on('server message', function(msgInfo){
   else {
     $('#messages').append($('<li class="prefix-30 mobile-prefix-30 userMessage">').text(msgInfo.whatsMessage));
   }
+
+  // scrolling on new message trick
+  msgsHeight += ( $("#messages li").last().innerHeight() + 10 ) ;
+    // $("#messages li").last().outerHeight() + ( $("#messages li").last().innerHeight() - $("#messages li").last().height() ) ) ; //let this get over the height of the message box, then start doing the scroll down animation
+  console.log(msgsHeight);
+  if ( msgsHeight >= $("#messages").outerHeight() ) {
+    console.log("boom");
+    scrollMagic();
+  }
+
 });
 
 // Show Bot is Typing
@@ -52,6 +63,12 @@ socket.on("isTyping", function(data) {
     }
     else {
       // $('#messages').append($('<li id="userTypingMessage">user typing</li>'));
+    }
+
+    // scrolling trick for user/bot typing too
+    if ( msgsHeight >= $("#messages").outerHeight() ) {
+      console.log(msgsHeight);
+      scrollMagic();
     }
   }
   else {
@@ -83,4 +100,14 @@ $("#m").keypress(function(e){
       timeout = setTimeout(timeoutFunction, 5000);
     }
   }
+});
+
+function scrollMagic() {
+  $("#messages").animate( {
+    scrollTop: $("#messages")[0].scrollHeight - $("#messages").outerHeight()
+  }, 300 );
+}
+
+$(document).ready(function(){
+  $("#messages").height( $(window).height() -  130 ) ; // total height - header height (60)- footer height (50) - 20px for padding
 });
