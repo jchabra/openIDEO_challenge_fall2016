@@ -31,25 +31,27 @@ $('form').submit(function(){
   return false;
 });
 
+// Show User and Bot Messages
 socket.on('server message', function(msgInfo){
   clearTimeout(timeout);
   timeout = setTimeout(timeoutFunction, 0);
 
   if ( msgInfo.isBot ) {
-    $('#messages').append($('<li class="grid-70 mobile-grid-70 prefix-30 mobile-prefix-30 botMessage">').text(msgInfo.whatsMessage));
+    $('#messages').append($('<li class="suffix-30 mobile-suffix-30 botMessage">').text(msgInfo.whatsMessage));
   }
   else {
-    $('#messages').append($('<li class="grid-70 mobile-grid-70 prefix-30 mobile-prefix-30 userMessage">').text(msgInfo.whatsMessage));
+    $('#messages').append($('<li class="prefix-30 mobile-prefix-30 userMessage">').text(msgInfo.whatsMessage));
   }
 });
 
+// Show Bot is Typing
 socket.on("isTyping", function(data) {
   if (data.isTyping) {
     if ( data.isBot ) {
-      $('#messages').append($('<li id="botTypingMessage">bot typing</li>'));
+      $('#messages').append($('<li id="botTypingMessage" class="suffix-30 mobile-suffix-30 botMessage">...</li>'));
     }
     else {
-      $('#messages').append($('<li id="userTypingMessage">user typing</li>'));
+      // $('#messages').append($('<li id="userTypingMessage">user typing</li>'));
     }
   }
   else {
