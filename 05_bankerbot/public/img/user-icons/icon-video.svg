@@ -3,9 +3,15 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="500px" height="500px" viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#7FD134;}
+	.st0{fill:none;stroke:#BA3273;stroke-width:10;stroke-miterlimit:10;}
+	.st1{fill:#BA3273;}
 </style>
-<path class="st0" d="M36.9,341.3c0,9.8,7.9,17.8,17.8,17.8h260.9c9.8,0,17.8-7.9,17.8-17.8V229v-57.8c0-9.8-7.9-17.8-17.8-17.8H54.7
-	c-9.8,0-17.8,7.9-17.8,17.8L36.9,341.3L36.9,341.3z"/>
-<polygon class="st0" points="461.9,182 333.4,228.8 333.4,284.8 461.9,336.2 "/>
+<g id="圖層_1">
+	<circle class="st0" cx="250" cy="250" r="207.5"/>
+	<path class="st1" d="M393.4,313.8c0,6.6-5.4,12-12,12H205.1c-6.6,0-12-5.4-12-12v-75.9v-39.1c0-6.6,5.4-12,12-12h176.3
+		c6.6,0,12,5.4,12,12V313.8z"/>
+	<polygon class="st1" points="106.2,206.1 193.1,237.8 193.1,275.6 106.2,310.3 	"/>
+</g>
+<g id="圖層_2">
+</g>
 </svg>

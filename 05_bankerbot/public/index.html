@@ -5,6 +5,8 @@
   <title>BankerBot</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <link rel="stylesheet" href="/style/css/normalize.css">
   <!--[if (gt IE 8) | (IEMobile)]><!-->
   <link rel="stylesheet" href="/style/css/unsemantic-grid-responsive.css" />
@@ -27,24 +29,22 @@
     <div class="grid-container grid-100 mobile-grid-100">
       <!-- back -->
       <div class="grid-5 suffix-25 mobile-grid-15 mobile-suffix-15 back">
-        <a href=""><img src="img/user-icons/back.png" alt="Back Button"></a>
+        <img src="img/user-icons/icon-back.svg" alt="Back Button">
       </div>
       <!-- logo -->
       <div class="grid-10 prefix-15 suffix-15 mobile-grid-20 mobile-prefix-10 mobile-suffix-5 logo">
-        <img src="img/user-icons/MoneyPenny.png" alt="Money Penny Logo">
+        <img src="img/user-icons/icon-moneypenny.svg" alt="Money Penny Logo">
       </div>
       <!-- other -->
       <div class="grid-30 mobile-grid-35 icons">
         <div class="grid-33 mobile-grid-33 call">
-          <img src="img/user-icons/phonecall.png" alt="Phone Call Icon">
+          <img src="img/user-icons/icon-phone.svg" alt="Phone Call Icon">
         </div>
         <div class="grid-33 mobile-grid-33 video">
-          <img src="img/user-icons/videocall.png" alt="Video Call Icon">
+          <img src="img/user-icons/icon-video.svg" alt="Video Call Icon">
         </div>
         <div class="grid-33 mobile-grid-33 faq">
-          <a href="" target ="_blank">
-            <img src="img/user-icons/QA-2.png" alt="Frequently Asked Questions Icon">
-          </a>
+          <img src="img/user-icons/icon-faq.svg" alt="Frequently Asked Questions Icon">
         </div>
       </div>
     </div><!-- //.grid-container -->
@@ -58,6 +58,35 @@
     <input id="m" class="grid-95 mobile-grid-90" autocomplete="off" />
     <button class="grid-5 mobile-grid-10 icon submit">Submit</button>
   </form>
+
+
+
+  <div id="pageBankAppID" class="pageContainer">
+    <div class="pageTitle">Exitted chat with Money Penny...<br><br><br>Back to mobile<br>banking/Co-Op App</div>
+  </div>
+
+  <div id="pagePhoneID" class="pageContainer">
+    <div class="pageImage pageImagePhone"></div>
+    <div class="pageTitle">Calling Money Penny...</div>
+  </div>
+
+  <div id="pageVideoID" class="pageContainer ">
+    <div class="pageImage pageImageVideo"></div>
+    <div class="pageTitle">Video-Calling<br>Money Penny...</div>
+  </div>
+
+  <div id="pageFAQID" class="pageContainer pageFAQpre">
+    <div class="faqTitle">You Can Say...</div>
+    <ul class="faqList">
+      <li>Where is my closest ATM?</li>
+      <li>What is my checking account balance?</li>
+      <li>Can you show me my last charge from Amazon?</li>
+      <li>What tips can you give me to protect me from financial fraud?</li>
+      <li>Remind me to pay back Joey l8r</li>
+      <li>I'd like to schedule a talk in-person tmrw at 5 after work</li>
+      <li>How much do I need to save every month to go to the Bahamas this winter?</li>
+    </ul>
+  </div>
 
   <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
   <script src="http://code.jquery.com/jquery-1.11.1.js"></script>

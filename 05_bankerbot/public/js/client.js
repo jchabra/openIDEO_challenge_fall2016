@@ -38,7 +38,26 @@ socket.on('server message', function(msgInfo){
   timeout = setTimeout(timeoutFunction, 0);
 
   if ( msgInfo.isBot ) {
-    $('#messages').append($('<li class="suffix-30 mobile-suffix-30 botMessage">').text(msgInfo.whatsMessage));
+    // handle special linked messages 
+    if ( msgInfo.whatsMessage.includes("Fulton") ) {
+      console.log('fulton bank question');
+      $('#messages').append($('<li class="suffix-30 mobile-suffix-30 botMessage">Hey there, Jasmine! Looks like the nearest Bank of America ATM is at <a href="https://goo.gl/maps/ViqDm3z5aU92">350 Fulton St.</a> Need any banking safety tips?</li>') );
+    }
+    else if ( msgInfo.whatsMessage.includes("Jay") ) {
+      console.log('jay bank mobile question');
+      $('#messages').append($('<li class="suffix-30 mobile-suffix-30 botMessage">There’s also a branch on wheels arriving nearby at <a href="https://goo.gl/maps/9e6EMSHgdGx">323 Jay St.</a> in 15 minutes.</li>') );
+    }
+    else if ( msgInfo.whatsMessage.includes("fraud") ) {
+      console.log('fraud question');
+      $('#messages').append($('<li class="suffix-30 mobile-suffix-30 botMessage">To protect you from financial fraud I found a checklist which you can follow to keep yourself safe and protected. Visit the checklist at <a href="http://bit.ly/zerofraud">http://bit.ly/zerofraud</a> or come visit one of our coincerges who would love to go over our fraud satefy guide with you</li>') );
+    }
+    else if ( msgInfo.whatsMessage.includes("QR") ) {
+      console.log('QR question');
+      $('#messages').append($('<li class="suffix-30 mobile-suffix-30 botMessage">Sure, tap <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Wikipedia_mobile_en.svg/296px-Wikipedia_mobile_en.svg.png">this link</a> to view a QR code you can scan at the ATM for an easier transaction.</li>') );
+    }
+    else {
+      $('#messages').append($('<li class="suffix-30 mobile-suffix-30 botMessage">').text(msgInfo.whatsMessage));
+    }
   }
   else {
     $('#messages').append($('<li class="prefix-30 mobile-prefix-30 userMessage">').text(msgInfo.whatsMessage));
@@ -46,10 +65,7 @@ socket.on('server message', function(msgInfo){
 
   // scrolling on new message trick
   msgsHeight += ( $("#messages li").last().innerHeight() + 10 ) ;
-    // $("#messages li").last().outerHeight() + ( $("#messages li").last().innerHeight() - $("#messages li").last().height() ) ) ; //let this get over the height of the message box, then start doing the scroll down animation
-  console.log(msgsHeight);
   if ( msgsHeight >= $("#messages").outerHeight() ) {
-    console.log("boom");
     scrollMagic();
   }
 
@@ -67,7 +83,6 @@ socket.on("isTyping", function(data) {
 
     // scrolling trick for user/bot typing too
     if ( msgsHeight >= $("#messages").outerHeight() ) {
-      console.log(msgsHeight);
       scrollMagic();
     }
   }
@@ -110,4 +125,30 @@ function scrollMagic() {
 
 $(document).ready(function(){
   $("#messages").height( $(window).height() -  130 ) ; // total height - header height (60)- footer height (50) - 20px for padding
+});
+
+
+
+// handle extra pages + button clicks
+$(".pageContainer").click(function(){
+    $("#pageVideoID").removeClass('pageVideo') ;
+    $("#pagePhoneID").removeClass('pagePhone') ;
+    $("#pageFAQID").removeClass('pageFAQ') ;
+    $("#pageBankAppID").removeClass('pageBankApp') ;
+});
+
+$(".video").click(function(){
+    $("#pageVideoID").addClass('pageVideo') ;
+});
+
+$(".call").click(function(){
+    $("#pagePhoneID").addClass('pagePhone') ;
+});
+
+$(".faq").click(function(){
+    $("#pageFAQID").addClass('pageFAQ') ;
+});
+
+$(".back").click(function(){
+    $("#pageBankAppID").addClass('pageBankApp') ;
 });

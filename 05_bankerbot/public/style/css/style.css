@@ -80,7 +80,7 @@ body {
   /* border-bottom: 2px solid #e6e6ea; */
   padding: 10px 2px;
   top: 0;
-  position: fixed;
+  position: absolute;
   width: 100%;
   background: white;
 }
@@ -128,7 +128,7 @@ form button {
   white-space: nowrap;
   overflow: hidden;
   color: transparent;
-  background: url(../../img/user-icons/send.png) no-repeat #e6e6ea;
+  background: url(../../img/user-icons/icon-send.svg) no-repeat #e6e6ea;
   background-size: 20px;
   background-position: 24px 10px;
 }
@@ -141,6 +141,7 @@ form button {
   height:500px;
   overflow-y: scroll;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 #messages li {
   padding: 11px;
@@ -246,7 +247,7 @@ input:focus {
 }
 @media screen and (max-width: 390px) {
   .logo img {
-    width: 75% !important;
+    width: 110% !important;
   }
 
   .back {
@@ -281,4 +282,97 @@ input:focus {
   form button {
     background-position: 5px 11px;
   }
+}
+
+
+/*** Spencer's Additions ***/
+.pageContainer {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+
+  transition-duration: 500ms;
+  opacity: 0;
+
+  visibility: hidden;
+}
+
+.pageVideo {
+  opacity: 1;
+  visibility: visible;
+}
+
+.pagePhone {
+  opacity: 1;
+  visibility: visible;
+}
+
+.pageFAQ {
+  opacity: 1;
+  visibility: visible;
+}
+
+.pageBankApp {
+  opacity: 1;
+  visibility: visible;
+}
+
+.pageFAQpre {
+  justify-content: flex-start;
+}
+
+.pageTitle {
+  font-size: 36px;
+  text-align: center;
+}
+
+.faqTitle {
+  color: #ea8c55;
+  font-weight: bold;
+  font-size: 30px;
+  padding: 28px;
+}
+
+.faqList {
+  padding: 0 0 0 30px;
+}
+
+.faqList li {
+  font-size: 24px;
+  color: #4d4d4d;
+  padding: 10px 0px;
+}
+
+.pageImage {
+  width: 50vw;
+  height: 50vw;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.pageImagePhone {
+  background-image: url('../../img/user-icons/icon-phone.svg');
+}
+
+.pageImageVideo {
+  background-image: url('../../img/user-icons/icon-video.svg');
+}
+
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
 }
